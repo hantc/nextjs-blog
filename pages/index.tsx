@@ -4,8 +4,10 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Date from '../components/date'
+import {GetStaticProps} from "next";
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async context => {
+// export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
   return {
     props: {
@@ -22,7 +24,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <Link href="/posts/ondra">
-          odkaz ondra
+          odkaz ondra2
         </Link>
 
         <p>[Your Self Introduction]</p>
